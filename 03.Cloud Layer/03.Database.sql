@@ -1,0 +1,40 @@
+USE group51;
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+CREATE TABLE `iot_control` (
+  `id` tinyint(4) DEFAULT NULL,
+  `pump` tinyint(4) DEFAULT NULL,
+  `mist` tinyint(4) DEFAULT NULL,
+  `mode` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+CREATE TABLE `iot_data` (
+  `id` int(11) NOT NULL,
+  `time` datetime DEFAULT NULL,
+  `temp` float DEFAULT NULL,
+  `humi` float DEFAULT NULL,
+  `pressure` float DEFAULT NULL,
+  `light` int(11) DEFAULT NULL,
+  `rain` int(11) DEFAULT NULL,
+  `pm25` int(11) DEFAULT NULL,
+  `soil` int(11) DEFAULT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+ALTER TABLE `iot_data`
+  ADD PRIMARY KEY (`id`);
+
+
+ALTER TABLE `iot_data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
